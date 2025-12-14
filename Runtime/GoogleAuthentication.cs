@@ -60,7 +60,6 @@ namespace GoogleAuth
 
             AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent", currentActivity, new AndroidJavaClass("com.unity.extension.GoogleAuth.SignInHelperActivity"));
 
-            //currentActivity.Call("startActivity", intent);
             currentActivity.Call("startActivityForResult", intent, RC_SIGN_IN);
         }
 

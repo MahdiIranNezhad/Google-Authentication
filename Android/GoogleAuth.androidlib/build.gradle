@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.unity.extension.GoogleAuth'
+
+    compileSdkVersion 36
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 36
+        consumerProguardFiles 'proguard.txt'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    compileOnly files("${rootProject.projectDir}/unityLibrary/libs/unity-classes.jar")
+    compileOnly "com.google.android.gms:play-services-auth:21.4.0"
+}

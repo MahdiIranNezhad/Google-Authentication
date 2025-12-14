@@ -1,0 +1,3 @@
+# Keep your plugin class
+-keep class com.unity.extension.GoogleAuth.** { *; }
+-keep class com.unity.extension.** { *; }

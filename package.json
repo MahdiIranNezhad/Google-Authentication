@@ -1,0 +1,12 @@
+{
+  "name": "com.unity.extension.googleauth",
+  "version": "1.0.0",
+  "displayName": "Native Google Auth",
+  "description": "Provide an authorization library based on the native Google Sign-In on Android for Unity Android.",
+  "unity": "2022.3",
+  "type": "library",
+  "author": {
+    "name": "Mahdi Iran Nezhad",
+    "email": "Mahdi.Papata@gmail.com"
+  }
+}

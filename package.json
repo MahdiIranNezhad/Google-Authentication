@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "displayName": "Native Google Auth",
   "description": "Provide an authorization library based on the native Google Sign-In on Android for Unity Android.",
-  "unity": "2022.3",
+  "unity": "2020.1",
   "type": "library",
   "author": {
     "name": "Mahdi Iran Nezhad",
     "email": "Mahdi.Papata@gmail.com"
+  },
+  "dependencies": {
+    "com.google.external-dependency-manager": "1.2.185"
   }
 }

@@ -1,13 +1,25 @@
 apply plugin: 'com.android.library'
 
-android {
-    namespace 'com.unity.extension.GoogleAuth'
+def getCompileSdk(unityLib) {
+    def unityCompileSdk = unityLib.compileSdkVersion
+    def version = unityCompileSdk.find('\\d+').toInteger()
+    if (version < 34) {
+        return 34
+    }
+    return version
+}
 
-    compileSdkVersion 36
+android {
+
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.unity.extension.GoogleAuth'
+    }
+    
+    def unityLib = project(':unityLibrary').extensions.getByName('android')
+    compileSdkVersion getCompileSdk(unityLib)
 
     defaultConfig {
         minSdkVersion 23
-        targetSdkVersion 36
         consumerProguardFiles 'proguard.txt'
     }
 

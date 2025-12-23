@@ -23,6 +23,12 @@ public class GoogleSignInPlugin {
         }
     }
 
+    public void onSilentSignInSuccess(String idToken) {
+        if (mListener != null) {
+            UnityPlayer.currentActivity.runOnUiThread(() -> mListener.OnSilentSignInSuccess(idToken));
+        }
+    }
+
     public void onSignInFailed(String errorMessage) {
         if (mListener != null) {
             UnityPlayer.currentActivity.runOnUiThread(() -> mListener.OnSignInFailed(errorMessage));
@@ -31,7 +37,7 @@ public class GoogleSignInPlugin {
 
     public interface SignInListener {
         void OnSignInSuccess(String idToken);
-
+        void OnSilentSignInSuccess(String idToken);
         void OnSignInFailed(String errorMessage);
     }
 }
